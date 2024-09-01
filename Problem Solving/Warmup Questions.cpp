@@ -129,3 +129,18 @@ int birthdayCakeCandles(vector<int> candles) {
     }
     return c;
 }
+//9.Diagonal Difference
+int c=0;
+int d=0;
+int j=0;
+int diagonalDifference(vector<vector<int>> arr) {
+    int f=arr[0].size()-1;
+    for(int i=0; i<arr.size();i++){
+        c+=arr[i][j];
+        j++;
+        d+=arr[i][f];
+        f--;
+    }
+    return abs(c-d);
+}
+//10.Time Conversion
