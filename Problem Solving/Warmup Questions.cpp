@@ -144,3 +144,21 @@ int diagonalDifference(vector<vector<int>> arr) {
     return abs(c-d);
 }
 //10.Time Conversion
+string timeConversion(string s) {
+    string hour = s.substr(0, 2);
+    string rest = s.substr(2, 6);
+    string period = s.substr(8, 2);
+
+    if (period == "PM") {
+        if (hour != "12") {
+            int hourInt = stoi(hour) + 12;
+            hour = to_string(hourInt);
+        }
+    } else {
+        if (hour == "12") {
+            hour = "00";
+        }
+    }
+
+    return hour + rest;
+}
